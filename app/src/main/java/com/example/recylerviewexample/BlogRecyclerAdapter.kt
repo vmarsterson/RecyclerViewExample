@@ -1,4 +1,4 @@
-package com.example.recylerviewexample.Models
+package com.example.recylerviewexample
 
 
 import android.view.LayoutInflater
@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.recylerviewexample.R
+import com.example.recylerviewexample.Models.BlogPost
+import kotlinx.android.synthetic.main.layout_blog_list_item.view.*
 
 class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     private var items: List<BlogPost> = ArrayList()
@@ -15,7 +16,8 @@ class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return BlogViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.layout_blog_list_item, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.layout_blog_list_item, parent, false)
         )
     }
 
@@ -44,7 +46,7 @@ class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         val blogTitle = itemView.blog_title
         val blogAuthor = itemView.blog_author
         //    these are referring to the ids of the views we've created in our layouts
-        fun bind(blogPost: BslogPost){
+        fun bind(blogPost: BlogPost){
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.ic_launcher_background)
                 .error(R.drawable.ic_launcher_background)
