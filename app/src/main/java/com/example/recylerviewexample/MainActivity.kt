@@ -34,10 +34,11 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView(){
         recycler_view.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
+            val topSpacingDecorate = TopSpacingItemDecoration(30)
+            addItemDecoration(topSpacingDecorate)
             blogAdapter = BlogRecyclerAdapter()
             adapter = blogAdapter
         }
-//            val topSpacingDecorate = TopSpacingItemDecoration(30)
-//            addItemDecoration(topSpacingDecorator)
+
     }
 }
